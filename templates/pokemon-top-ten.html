@@ -1,0 +1,116 @@
+<div class="ranking-section">
+<div class="flex-container">
+    <div class="flex-child">
+
+        <div class="data-display">
+            <div class="data-title">
+                <h1>Most Common Pokemon</h1>
+            </div>
+                <p>(click each Pokemon for details)</p>
+
+            {% for i in range(pt_two_len): %}
+            <img src="/static/img/{{ pokemon_ct_labels[i].lower() }}.png" class="top-count-img"
+                 id="pokemon-ct-{{ i+1 }}" alt="{{ pokemon_ct_labels[i].lower() }} ">
+            <br>
+            <p id="pokemon-ct-p-{{ i+1 }}" class="pokemon-rank">
+                <span><strong>{{ i+1 }}.) </strong></span>
+                <span><strong>{{ pokemon_ct_labels[i] }} </strong></span>
+                <span><strong>{{ pokemon_ct_data[i] }}</strong></span>
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="flex-child">
+
+        <div class="data-display">
+            <div class="data-title">
+                <h1>Most valuable Pokemon on Average</h1>
+            </div>
+                <p>(click each Pokemon for details)</p>
+
+            {% for i in range(pt_two_len): %}
+            <img src="/static/img/{{ pokemon_price_labels[i].lower() }}.png"
+                 id="pokemon-price-{{ i+1 }}" class="top-count-img">
+            <br>
+            <p id="pokemon-price-p-{{ i+1 }}" class="pokemon-rank">
+                <span><strong>{{ i+1 }}.) </strong></span>
+                <span><strong>{{ pokemon_price_labels[i] }} </strong></span>
+                <span><strong>${{ pokemon_price_data[i] }}</strong></span>
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<h6 class="desc-p">Not a lot of surprises in the ranking of most common pokemon printed. In the sample dataset, 8
+out of the top 10 are from the original 150. It's also likely that Unown made the list due to the printing per letter
+of the alphabet. In comparing the most common card printed with the most valuable Pokemon printed on average, only
+two are in both lists, Charizard and Blastoise. Charizard by far is the most popular type of card in the game, with the
+shadowless holo being the most valuable card in the dataset. </h6>
+
+</div>
+<script>
+  $(document).ready(function(){
+    $("#pokemon-ct-1").click(function(){
+      $("#pokemon-ct-p-1").toggle(1000);
+    });
+    $("#pokemon-ct-2").click(function(){
+      $("#pokemon-ct-p-2").toggle(1000);
+    });
+    $("#pokemon-ct-3").click(function(){
+      $("#pokemon-ct-p-3").toggle(1000);
+    });
+    $("#pokemon-ct-4").click(function(){
+      $("#pokemon-ct-p-4").toggle(1000);
+    });
+    $("#pokemon-ct-5").click(function(){
+      $("#pokemon-ct-p-5").toggle(1000);
+    });
+    $("#pokemon-ct-6").click(function(){
+      $("#pokemon-ct-p-6").toggle(1000);
+    });
+    $("#pokemon-ct-7").click(function(){
+      $("#pokemon-ct-p-7").toggle(1000);
+    });
+    $("#pokemon-ct-8").click(function(){
+      $("#pokemon-ct-p-8").toggle(1000);
+    });
+    $("#pokemon-ct-9").click(function(){
+      $("#pokemon-ct-p-9").toggle(1000);
+    });
+    $("#pokemon-ct-10").click(function(){
+      $("#pokemon-ct-p-10").toggle(1000);
+    });
+    $("#pokemon-price-1").click(function(){
+      $("#pokemon-price-p-1").toggle(1000);
+    });
+    $("#pokemon-price-2").click(function(){
+      $("#pokemon-price-p-2").toggle(1000);
+    });
+    $("#pokemon-price-3").click(function(){
+      $("#pokemon-price-p-3").toggle(1000);
+    });
+    $("#pokemon-price-4").click(function(){
+      $("#pokemon-price-p-4").toggle(1000);
+    });
+    $("#pokemon-price-5").click(function(){
+      $("#pokemon-price-p-5").toggle(1000);
+    });
+    $("#pokemon-price-6").click(function(){
+      $("#pokemon-price-p-6").toggle(1000);
+    });
+    $("#pokemon-price-7").click(function(){
+      $("#pokemon-price-p-7").toggle(1000);
+    });
+    $("#pokemon-price-8").click(function(){
+      $("#pokemon-price-p-8").toggle(1000);
+    });
+    $("#pokemon-price-9").click(function(){
+      $("#pokemon-price-p-9").toggle(1000);
+    });
+    $("#pokemon-price-10").click(function(){
+      $("#pokemon-price-p-10").toggle(1000);
+    });
+  });
+</script>

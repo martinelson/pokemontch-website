@@ -1,0 +1,70 @@
+
+<h1 class="set-title">Most Valuable Set</h1>
+<div class="set-rank-container">
+    <canvas id="set-price-rank"></canvas>
+</div>
+<div class="row">
+    <div class="column">
+        <span><strong>Card Name</strong></span>
+    </div>
+    <div class="column">
+        <span><strong>Market Price</strong></span>
+    </div>
+    <div class="column">
+        <span><strong>Expected Value</strong></span>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <h6>{{ pop_5_name[0] }}</h6>
+    </div>
+    <div class="column">
+        <h6>{{ pop_5_price[0] }}</h6>
+    </div>
+    <div class="column">
+        <h6>{{ exp_val[0] }}</h6>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <h6>{{ pop_5_name[1] }}</h6>
+    </div>
+    <div class="column">
+        <h6>{{ pop_5_price[1] }}</h6>
+    </div>
+    <div class="column">
+        <h6>{{ exp_val[1] }}</h6>
+    </div>
+</div>
+
+<h6 class="desc-p">The most valuable set on average is the POP Series 5 set with an total average value of $171 across
+the sample dataset. It's worth mentioning that although the average value is this high, the expected value of each
+of these packs is much lower. With using the two most valuable cards in the set, the Espeon and Umbreon Gold Star
+cards, and an estimated pull rate for those two cards of 1 in 40 packs, the expected value for the pack just using these
+two cards as the baseline is closer to $55. With unopened packs of the POP Series 5 going for as much as $650 on eBay
+and elsewhere, these packs of cards are a very risky investment. If someone is wanting to get these two cards as a
+part of a collection, then it's more likely to be worth it to purchase those cards separately.</h6>
+
+<script>
+        let setChart = new Chart(document.getElementById("set-price-rank"), {
+              type: "polarArea",
+              data:
+              {
+                labels: {{ set_rank_labels|safe }},
+                datasets: [{
+                        label: 'Total dataset',
+                        data: {{ set_rank_data }},
+                        backgroundColor: [
+                          'rgb(86, 40, 180)',
+                          'rgb(216, 14, 112)',
+                          'rgb(247, 178, 54)',
+                          'rgb(167, 255, 131)',
+                          'rgb(231, 69, 95)',
+                        ],
+                }]
+              },
+              options: {
+
+              }
+              });
+</script>

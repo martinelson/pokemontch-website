@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Pokemon Card Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/fe5a2b3aeb.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="nav">
+
+    <div class="nav-links">
+        <span><a class="nav-link" href="https://github.com/martinelson/pokemontcganalysis">Github</a></span>
+        <span><a class="nav-link" href="{{ url_for('regression') }}">Regression Analysis</a></span>
+        <span><a class="nav-link" href="https://www.martinnelson.dev/">Portfolio</a></span>
+    </div>
+</div>
+
+<div class="intro-div">
+    <h1 class="title">Pokemon Card Price Analysis</h1>
+    <div class="flex-container">
+        <div class="flex-child">
+            <div>
+                <canvas id="introChart2"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="intro-desc">
+    <h6 class="intro-p">In the past couple of years, the popularity of Pokemon cards has increased significantly. In the midst of the
+pandemic on top of some special 25th year anniversary promotions, I even found my old collection and bought
+some cards off eBay myself. I was curious which cards were the most valuable and how the values varied across different
+types of cards. Below is the beginning of this analysis. If you're interested, checkout my Github link for the full
+scope of this project, which involved scraping pokemon price data, and a regression analysis which you can also view
+here.</h6>
+</div>
+<h1>Prices per Card Type</h1>
+
+{% include 'set-charts.html' %}
+
+<h6 class="desc-p"> In the Pokemon trading card game, there are a few main categories of cards as detailed above.
+    As expected, the Pokemon Card Type is by far the most valuable card type with a $14 average lead in terms of value.
+    Whether it be for collecting or actually  using in the TCG, intuitively, this makes sense. The majority of cards
+in a pack are of the Pokemon card type, with a lot more variability and art design surrounding the cards. It's why
+you open a pack to begin with - to see which rare pokemon is at the end waiting for you. What was more surprising
+was the Stadium card type being in second, followed by the Supporter cards. Promotional cards such as Champion's
+Festival, and Tropical Beach put significant weight to the Stadium category. In general, the promotional sets tend
+to give more value to the non-pokemon card types. It is worth noting that Hidden Fates: Shiny Vault is listed twice in
+the top five for Supporter and Stadium cards, which was a fairly recent set. As full art supporter cards become more
+popular, it could be interesting to see how that impacts the price, and the printing decisions for these types of
+cards in the future.</h6>
+{% include 'pokemon-top-ten.html' %}
+
+{% include 'set-charts-script.html' %}
+
+{% include 'set-price-rank.html' %}
+
+<div class="footer">
+    <h6 class="copyright">Copyright &copy; Martin Nelson</h6>
+    <h6>Image Credits</h6>
+    <a href="https://www.pokemon.com/us/">Pokemon.com</a>
+    <a href="https://pokemondb.net/">Pokemondb.net</a>
+    <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">Bulbapedia</a>
+</div>
+
+<script>
+              // Chart options
+              let introDoughnut = new Chart(document.getElementById("introChart2"), {
+              type: "doughnut",
+              data:
+              {
+                labels: ['','',''],
+                datasets: [{
+                        label: '',
+                        data: [33, 33, 33],
+                        backgroundColor: [
+                         'rgb(255, 99, 132)',
+                         'rgb(54, 162, 235)',
+                         'rgb(255, 205, 86)'
+                        ],
+                        hoverOffset: 4
+                }]
+              },
+              options: {
+                animation: {
+                    duration: 3000
+                },
+                events: [],
+                plugins:{
+                    legend: {
+                        labels: {
+                            boxWidth: 0,
+                        }
+                    }
+                }
+              }
+              });
+
+</script>
+</body>
+
+</html>

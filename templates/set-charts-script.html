@@ -1,0 +1,283 @@
+<script>
+
+    let energyBar = new Chart(document.getElementById("energyChart"), {
+              type: "bar",
+              data:
+              {
+                labels: {{ energy_labels|safe }},
+                datasets: [{
+                        axis: 'y',
+                        label: 'Energy dataset',
+                        data: {{ energy_data }},
+                        fill: false,
+                        backgroundColor: [
+                          'rgba(0, 145, 124, 0.5)',
+                          'rgba(0, 145, 124, 0.5)',
+                          'rgba(0, 145, 124, 0.5)',
+                          'rgba(0, 145, 124, 0.5)',
+                          'rgba(0, 145, 124, 0.5)'
+                        ],
+                        borderColor: [
+                           'rgb(0, 145, 124)',
+                           'rgb(0, 145, 124)',
+                           'rgb(0, 145, 124)',
+                           'rgb(0, 145, 124)',
+                           'rgb(0, 145, 124)'
+                        ],
+                        borderWidth: 1
+                }]
+              },
+              options: {
+                indexAxis: 'y',
+                plugins:{
+                    legend: {
+                        labels: {
+                            boxWidth: 0,
+                        },
+                        display: false
+                    }
+                }
+              }
+              });
+
+        let itemBar = new Chart(document.getElementById("itemChart"), {
+              type: "bar",
+              data:
+              {
+                labels: {{ item_labels|safe }},
+                datasets: [{
+                        axis: 'y',
+                        label: 'Item dataset',
+                        data: {{ item_data }},
+                        fill: false,
+                        backgroundColor: [
+                          'rgba(114, 106, 149, 0.5)',
+                          'rgba(114, 106, 149, 0.5)',
+                          'rgba(114, 106, 149, 0.5)',
+                          'rgba(114, 106, 149, 0.5)',
+                          'rgba(114, 106, 149, 0.5)'
+                        ],
+                        borderColor: [
+                           'rgb(114, 106, 149)',
+                           'rgb(114, 106, 149)',
+                           'rgb(114, 106, 149)',
+                           'rgb(114, 106, 149)',
+                           'rgb(114, 106, 149)'
+                        ],
+                        borderWidth: 1
+                }]
+              },
+              options: {
+                indexAxis: 'y',
+                plugins:{
+                    legend: {
+                        labels: {
+                            boxWidth: 0,
+                        },
+                        display: false
+                    }
+                }
+              }
+              });
+
+        let pokemonBar = new Chart(document.getElementById("pokemonChart"), {
+              type: "bar",
+              data:
+              {
+                labels: {{ pokemon_labels|safe }},
+                datasets: [{
+                        axis: 'y',
+                        label: 'Pokemon dataset',
+                        data: {{ pokemon_data }},
+                        fill: false,
+                        backgroundColor: [
+                          'rgba(193, 80, 80, 0.5)',
+                          'rgba(193, 80, 80, 0.5)',
+                          'rgba(193, 80, 80, 0.5)',
+                          'rgba(193, 80, 80, 0.5)',
+                          'rgba(193, 80, 80, 0.5)'
+                        ],
+                        borderColor: [
+                           'rgb(193, 80, 80)',
+                           'rgb(193, 80, 80)',
+                           'rgb(193, 80, 80)',
+                           'rgb(193, 80, 80)',
+                           'rgb(193, 80, 80)'
+                        ],
+                        borderWidth: 1
+                }]
+              },
+              options: {
+                indexAxis: 'y',
+                plugins:{
+                    legend: {
+                        labels: {
+                            boxWidth: 0,
+                        },
+                        display: false
+                    }
+                }
+              }
+              });
+
+        let supportBar = new Chart(document.getElementById("supportChart"), {
+              type: "bar",
+              data:
+              {
+                labels: {{ supporter_labels|safe }},
+                datasets: [{
+                        axis: 'y',
+                        label: 'Supporter dataset',
+                        data: {{ supporter_data }},
+                        fill: false,
+                        backgroundColor: [
+                          'rgba(255, 200, 92, 0.5)',
+                          'rgba(255, 200, 92, 0.5)',
+                          'rgba(255, 200, 92, 0.5)',
+                          'rgba(255, 200, 92, 0.5)',
+                          'rgba(255, 200, 92, 0.5)'
+                        ],
+                        borderColor: [
+                           'rgb(255, 200, 92)',
+                           'rgb(255, 200, 92)',
+                           'rgb(255, 200, 92)',
+                           'rgb(255, 200, 92)',
+                           'rgb(255, 200, 92)'
+                        ],
+                        borderWidth: 1
+                }]
+              },
+              options: {
+                indexAxis: 'y',
+                plugins:{
+                    legend: {
+                        labels: {
+                            boxWidth: 0,
+                        },
+                        display: false
+                    }
+                }
+              }
+              });
+
+        let stadiumBar = new Chart(document.getElementById("stadiumChart"), {
+              type: "bar",
+              data:
+              {
+                labels: {{ stadium_labels|safe }},
+                datasets: [{
+                        axis: 'y',
+                        label: 'Stadium dataset',
+                        data: {{ stadium_data }},
+                        fill: false,
+                        backgroundColor: [
+                          'rgba(16, 49, 107, 0.5)',
+                          'rgba(16, 49, 107, 0.5)',
+                          'rgba(16, 49, 107, 0.5)',
+                          'rgba(16, 49, 107, 0.5)',
+                          'rgba(16, 49, 107, 0.5)'
+                        ],
+                        borderColor: [
+                           'rgb(16, 49, 107)',
+                           'rgb(16, 49, 107)',
+                           'rgb(16, 49, 107)',
+                           'rgb(16, 49, 107)',
+                           'rgb(16, 49, 107)'
+                        ],
+                        borderWidth: 1
+                }]
+              },
+              options: {
+                indexAxis: 'y',
+                plugins:{
+                    legend: {
+                        labels: {
+                            boxWidth: 0,
+                        },
+                        display: false
+                    }
+                }
+              }
+              });
+
+        let toolBar = new Chart(document.getElementById("toolChart"), {
+              type: "bar",
+              data:
+              {
+                labels: {{ tool_labels|safe }},
+                datasets: [{
+                        axis: 'y',
+                        label: 'Tools dataset',
+                        data: {{ tool_data }},
+                        fill: false,
+                        backgroundColor: [
+                          'rgba(253, 95, 0, 0.5)',
+                          'rgba(253, 95, 0, 0.5)',
+                          'rgba(253, 95, 0, 0.5)',
+                          'rgba(253, 95, 0, 0.5)',
+                          'rgba(253, 95, 0, 0.5)'
+                        ],
+                        borderColor: [
+                           'rgb(253, 95, 0)',
+                           'rgb(253, 95, 0)',
+                           'rgb(253, 95, 0)',
+                           'rgb(253, 95, 0)',
+                           'rgb(253, 95, 0)'
+                        ],
+                        borderWidth: 1
+                }]
+              },
+              options: {
+                indexAxis: 'y',
+                plugins:{
+                    legend: {
+                        labels: {
+                            boxWidth: 0,
+                        },
+                        display: false
+                    }
+                }
+              }
+              });
+
+        let totalBar = new Chart(document.getElementById("totalChart"), {
+              type: "bar",
+              data:
+              {
+                labels: {{ total_labels|safe }},
+                datasets: [{
+                        axis: 'y',
+                        label: 'Total dataset',
+                        data: {{ total_data }},
+                        fill: false,
+                        backgroundColor: [
+                          'rgb(242, 17, 112)',
+                          'rgb(242, 17, 112)',
+                          'rgb(242, 17, 112)',
+                          'rgb(242, 17, 112)',
+                          'rgb(242, 17, 112)',
+                          'rgb(242, 17, 112)'
+                        ],
+                        borderColor: [
+                           'rgb(242, 17, 112)',
+                           'rgb(242, 17, 112)',
+                           'rgb(242, 17, 112)',
+                           'rgb(242, 17, 112)',
+                           'rgb(242, 17, 112)',
+                           'rgb(242, 17, 112)'
+                        ],
+                        borderWidth: 1
+                }]
+              },
+              options: {
+                plugins:{
+                    legend: {
+                        labels: {
+                            boxWidth: 0,
+                        },
+                        display: false
+                    }
+                }
+              }
+              });
+</script>
